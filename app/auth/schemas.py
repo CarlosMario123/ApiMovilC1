@@ -13,3 +13,8 @@ class EmailCheck(BaseModel):
     email: EmailStr
     exists: bool
     message: str
+
+
+class LoginRequest(BaseModel):
+    email: EmailStr
+    password: str
