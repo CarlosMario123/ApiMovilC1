@@ -3,7 +3,8 @@ from ..users.models import User
 from ..core.security import get_password_hash, verify_password
 from ..config.jwt import create_access_token
 from fastapi import HTTPException, status
-
+from passlib.context import CryptContext
+pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 class AuthService:
     @staticmethod
     def register(db: Session, email: str, password: str):
